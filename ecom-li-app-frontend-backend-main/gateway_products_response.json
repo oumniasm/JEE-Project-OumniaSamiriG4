@@ -1,0 +1,58 @@
+{
+  "_embedded" : {
+    "products" : [ {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8082/api/products/3521c9f9-c228-4e9c-9dbc-616801090895"
+        },
+        "product" : {
+          "href" : "http://192.168.128.1:8082/api/products/3521c9f9-c228-4e9c-9dbc-616801090895"
+        }
+      },
+      "id" : "3521c9f9-c228-4e9c-9dbc-616801090895",
+      "name" : "Computer",
+      "price" : 3200.0,
+      "quantity" : 11
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8082/api/products/e45f7ad1-fb0e-4d88-be77-9ff53f8e0e49"
+        },
+        "product" : {
+          "href" : "http://192.168.128.1:8082/api/products/e45f7ad1-fb0e-4d88-be77-9ff53f8e0e49"
+        }
+      },
+      "id" : "e45f7ad1-fb0e-4d88-be77-9ff53f8e0e49",
+      "name" : "Printer",
+      "price" : 1299.0,
+      "quantity" : 10
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8082/api/products/7b608bef-7acd-4f9b-b7d5-312fc8bd2002"
+        },
+        "product" : {
+          "href" : "http://192.168.128.1:8082/api/products/7b608bef-7acd-4f9b-b7d5-312fc8bd2002"
+        }
+      },
+      "id" : "7b608bef-7acd-4f9b-b7d5-312fc8bd2002",
+      "name" : "Smart Phone",
+      "price" : 5400.0,
+      "quantity" : 8
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://192.168.128.1:8082/api/products?page=0&size=20"
+    },
+    "profile" : {
+      "href" : "http://192.168.128.1:8082/api/profile/products"
+    }
+  },
+  "page" : {
+    "number" : 0,
+    "size" : 20,
+    "totalElements" : 3,
+    "totalPages" : 1
+  }
+}

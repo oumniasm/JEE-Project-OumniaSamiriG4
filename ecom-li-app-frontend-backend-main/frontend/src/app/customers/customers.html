@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Customers</h2>
+
+  <div *ngIf="isLoading" class="alert alert-info">
+    Loading customers... Please wait.
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{errorMessage}}
+    <button class="btn btn-sm btn-outline-danger ms-2" (click)="loadCustomers()">Retry</button>
+  </div>
+
+  <table *ngIf="!isLoading && customers.length > 0; else noData" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of customers">
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div *ngIf="!isLoading && !errorMessage">
+      <p>No customers found.</p>
+      <button class="btn btn-primary" (click)="loadCustomers()">Refresh</button>
+    </div>
+
+    <div *ngIf="debugData" style="background: #f0f0f0; padding: 10px; margin-top: 10px; border: 1px solid #ccc;">
+      <strong>Debug Info:</strong>
+      <pre>{{ debugData | json }}</pre>
+    </div>
+  </ng-template>
+</div>

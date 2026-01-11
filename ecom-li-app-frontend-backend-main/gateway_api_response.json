@@ -1,0 +1,58 @@
+{
+  "_embedded" : {
+    "customers" : [ {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8081/api/customers/1"
+        },
+        "customer" : {
+          "href" : "http://192.168.128.1:8081/api/customers/1{?projection}",
+          "templated" : true
+        }
+      },
+      "id" : 1,
+      "name" : "Mohamed",
+      "email" : "med@gmail.com"
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8081/api/customers/2"
+        },
+        "customer" : {
+          "href" : "http://192.168.128.1:8081/api/customers/2{?projection}",
+          "templated" : true
+        }
+      },
+      "id" : 2,
+      "name" : "Imane",
+      "email" : "imane@gmail.com"
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.128.1:8081/api/customers/3"
+        },
+        "customer" : {
+          "href" : "http://192.168.128.1:8081/api/customers/3{?projection}",
+          "templated" : true
+        }
+      },
+      "id" : 3,
+      "name" : "Yassine",
+      "email" : "yassine@gmail.com"
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://192.168.128.1:8081/api/customers?page=0&size=20"
+    },
+    "profile" : {
+      "href" : "http://192.168.128.1:8081/api/profile/customers"
+    }
+  },
+  "page" : {
+    "number" : 0,
+    "size" : 20,
+    "totalElements" : 3,
+    "totalPages" : 1
+  }
+}

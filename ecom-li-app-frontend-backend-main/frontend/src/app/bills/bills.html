@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Bills</h2>
+
+
+
+    <div *ngIf="error" style="color: red; margin-top: 10px;">{{error}}</div>
+
+    <div *ngIf="foundBill" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+        <h3>Bill Details</h3>
+        <p><strong>ID:</strong> {{foundBill.id}}</p>
+        <p><strong>Billing Date:</strong> {{foundBill.billingDate}}</p>
+        <p><strong>Customer ID:</strong> {{foundBill.customerId}}</p>
+        <p *ngIf="foundBill.customer"><strong>Customer Name:</strong> {{foundBill.customer.name}}</p>
+
+        <h4>Items</h4>
+        <ul>
+            <li *ngFor="let pi of foundBill.productItems">
+                Product ID: {{pi.productId}}, Price: {{pi.price}}, Quantity: {{pi.quantity}}
+                <span *ngIf="pi.product"> ({{pi.product.name}})</span>
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="bills.length > 0; else noBills" style="margin-top: 20px;">
+        <h3>All Bills</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Customer ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of bills">
+                    <td>{{b.id}}</td>
+                    <td>{{b.billingDate}}</td>
+                    <td>{{b.customerId}}</td>
+                    <td><button class="btn btn-sm btn-info" (click)="searchBill(b.id)">View Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #noBills>
+        <div *ngIf="isLoading" class="alert alert-info mt-3">Loading bills...</div>
+        <div *ngIf="!isLoading && bills.length === 0" class="mt-3">
+            <p>No bills found.</p>
+            <button class="btn btn-primary" (click)="loadBills()">Refresh</button>
+        </div>
+    </ng-template>
+</div>

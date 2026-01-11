@@ -1,0 +1,17 @@
+{
+    "/customer-service": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/inventory-service": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/billing-service": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

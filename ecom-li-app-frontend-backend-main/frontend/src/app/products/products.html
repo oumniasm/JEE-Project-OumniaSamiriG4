@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Products</h2>
+
+    <div *ngIf="isLoading" class="alert alert-info">
+        Loading products...
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+        <button class="btn btn-sm btn-outline-danger ms-2" (click)="loadProducts()">Retry</button>
+    </div>
+
+    <table *ngIf="!isLoading && products.length > 0; else noData" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noData>
+        <div *ngIf="!isLoading && !errorMessage">
+            <p>No products found.</p>
+            <button class="btn btn-primary" (click)="loadProducts()">Refresh</button>
+        </div>
+    </ng-template>
+</div>
